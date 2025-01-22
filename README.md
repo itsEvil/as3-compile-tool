@@ -1,5 +1,10 @@
 A C# script written in .net 9.0 that invokes the as3 compiler to compile a as3 project without needing intellij.
 
+### Requirements
+- .NET 9 SDK
+- AIR SDK
+- x64 JAVA
+
 ### How to use?
 - Compile the script then run it to get a default parameters.json file.
 - Modify the parameters.json and FlexConfig.xml file
