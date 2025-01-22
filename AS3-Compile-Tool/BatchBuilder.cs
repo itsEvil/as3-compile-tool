@@ -39,7 +39,14 @@ public static class BatchBuilder {
 
         var arguments = sb.ToString();
 
-        File.WriteAllText("script.bat", arguments);
+        try
+        {
+            File.WriteAllText("script.bat", arguments);
+        }
+        catch(Exception e)
+        {
+            Program.ExitApplication($"{e.Message}\n\t{e.StackTrace}");
+        }
     }
 
     private const string DApplication = "-Dapplication.home=";

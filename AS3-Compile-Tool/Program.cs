@@ -38,7 +38,32 @@ internal class Program {
         }
 
         BatchBuilder.Build(parameters);
-        var compiler = Process.Start("script.bat");
+        if (Terminate == true)
+            return;
+
+        try
+        {
+            File.Copy(
+                Path.Combine(Directory.GetCurrentDirectory(), "FlexConfig.xml"),
+                Path.Combine(Directory.GetCurrentDirectory(), "config.xml")
+            );
+        } 
+        catch(Exception e)
+        {
+            ExitApplication($"{e.Message}\n\t{e.StackTrace}");
+            return;
+        }
+
+        Process compiler;
+        try
+        {
+            compiler = Process.Start("script.bat");
+        }
+        catch(Exception e)
+        {
+            ExitApplication($"{e.Message}\n\t{e.StackTrace}");
+            return;
+        }
 
         Log.Debug("Started compiler Our PID: {0} Compiler PID:{1} Name:{2}", [Environment.ProcessId, compiler.Id, compiler.ProcessName]);
 

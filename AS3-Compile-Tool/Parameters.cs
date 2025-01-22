@@ -16,7 +16,7 @@ public class Parameters {
             JavaPath = DefaultJava64Path,
             JavaExtras = DefaultJavaExtras,
             ClassPath = DefaultClassPathValue,
-            ConfigPath = Path.Combine(Directory.GetCurrentDirectory(), "FlexConfig.xml"),
+            ConfigPath = Path.Combine(Directory.GetCurrentDirectory(), "config.xml"),
             SdkPath = DefaultSDKPath,
             ProjectArguments = DefaultProjectArguments
         }, Program.JsonOptions);
