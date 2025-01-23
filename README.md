@@ -1,4 +1,4 @@
-A C# script written in .net 9.0 that invokes the as3 compiler to compile a as3 project without needing intellij.
+A C# script using .net 9.0 that invokes the as3 compiler to compile a as3 project without needing a IDE like intellij.
 
 ### Requirements
 - .NET 9 SDK
